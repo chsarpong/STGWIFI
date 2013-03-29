@@ -150,6 +150,14 @@
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
+     <div class="featurette">
+           <h2 class="featurette-heading">Ridge, GREATER-ACCRA </h2>
+           <br />
+           <img src="Images/RIDGE.png" alt="" width="1000" height="10" />
+
+      </div>
+
        <div class="featurette">
            <h2 class="featurette-heading">Swedru, CENTRAL REGION</h2>
            <br />
@@ -157,12 +165,7 @@
 
       </div>
 
-       <div class="featurette">
-           <h2 class="featurette-heading">Ridge, GREATER-ACCRA </h2>
-           <br />
-           <img src="Images/RIDGE.png" alt="" width="1000" height="10" />
-
-      </div>
+      
 
       <div class="featurette">
            <h2 class="featurette-heading">Ridge, GREATER-ACCRA </h2>
