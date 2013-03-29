@@ -1,0 +1,907 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2AF4B10C-8E45-4D0A-A23B-E8A5BDB1AFC5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>STGWifi</RootNamespace>
+    <AssemblyName>STGWifi</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNet.ScriptManager.jQuery, Version=1.9.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.9.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.UI.Combined.1.8.20\lib\net45\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax, Version=4.5.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.4.5.6\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms, Version=4.5.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.4.5.6\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.1\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.0.3.12153\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Membership.OpenAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Membership.OpenAuth.1.0.0\lib\net45\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.0.0\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="bootstrap-master\.gitignore" />
+    <Content Include="bootstrap-master\bootstrap-master\.gitignore" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\css\bootstrap-responsive.css" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\css\bootstrap.css" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\css\docs.css" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\ico\apple-touch-icon-114-precomposed.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\ico\apple-touch-icon-144-precomposed.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\ico\apple-touch-icon-57-precomposed.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\ico\apple-touch-icon-72-precomposed.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\ico\favicon.ico" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\ico\favicon.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\bootstrap-docs-readme.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\bootstrap-mdo-sfmoma-01.jpg" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\bootstrap-mdo-sfmoma-02.jpg" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\bootstrap-mdo-sfmoma-03.jpg" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\bs-docs-bootstrap-features.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\bs-docs-masthead-pattern.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\bs-docs-responsive-illustrations.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\bs-docs-twitter-github.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\example-sites\8020select.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\example-sites\about-nexus-family.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\example-sites\adoptahydrant.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\example-sites\breakingnews.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\example-sites\fleetio.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\example-sites\fromtheappstore_hero.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\example-sites\gathercontent.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\example-sites\jshint.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\example-sites\kippt.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\example-sites\Nokia-Drive.jpg" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\example-sites\soundready.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\examples\bootstrap-example-carousel.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\examples\bootstrap-example-fluid.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\examples\bootstrap-example-justified-nav.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\examples\bootstrap-example-marketing-narrow.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\examples\bootstrap-example-marketing.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\examples\bootstrap-example-signin.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\examples\bootstrap-example-starter.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\examples\bootstrap-example-sticky-footer.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\examples\browser-icon-chrome.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\examples\browser-icon-firefox.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\examples\browser-icon-safari.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\examples\slide-01.jpg" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\examples\slide-02.jpg" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\examples\slide-03.jpg" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\glyphicons-halflings-white.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\glyphicons-halflings.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\grid-baseline-20px.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\less-logo-large.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\img\responsive-illustrations.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\js\application.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\js\bootstrap-affix.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\js\bootstrap-alert.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\js\bootstrap-button.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\js\bootstrap-carousel.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\js\bootstrap-collapse.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\js\bootstrap-dropdown.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\js\bootstrap-modal.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\js\bootstrap-popover.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\js\bootstrap-scrollspy.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\js\bootstrap-tab.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\js\bootstrap-tooltip.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\js\bootstrap-transition.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\js\bootstrap-typeahead.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\js\bootstrap.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\js\bootstrap.min.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\js\google-code-prettify\prettify.css" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\js\google-code-prettify\prettify.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\js\holder\holder.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\js\html5shiv.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\js\jquery.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\base-css.html" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\index.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\.gitmodules" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\lib\compiler.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\lib\hogan.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\lib\template.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\html\list.html" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\index.html" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\index.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\mustache.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\spec.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\tools\release.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\tools\web_templates.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\1.0.0\hogan.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\1.0.0\hogan.min.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.0\hogan.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.0\hogan.min.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.3\hogan.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.3\hogan.min.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.amd.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.common.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.min.amd.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.min.common.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.min.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.min.mustache.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.mustache.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.5\template-1.0.5.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.5\template-1.0.5.min.js" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\favicon.ico" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\images\logo.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\images\noise.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\images\small-hogan-icon.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\images\stripes.png" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\stylesheets\layout.css" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\stylesheets\skeleton.css" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\components.html" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\customize.html" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\examples\carousel.html" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\examples\fluid.html" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\examples\hero.html" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\examples\justified-nav.html" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\examples\marketing-narrow.html" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\examples\signin.html" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\examples\starter-template.html" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\examples\sticky-footer-navbar.html" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\examples\sticky-footer.html" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\extend.html" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\getting-started.html" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\index.html" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\javascript.html" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\scaffolding.html" />
+    <Content Include="bootstrap-master\bootstrap-master\img\glyphicons-halflings-white.png" />
+    <Content Include="bootstrap-master\bootstrap-master\img\glyphicons-halflings.png" />
+    <Content Include="bootstrap-master\bootstrap-master\js\bootstrap-affix.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\bootstrap-alert.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\bootstrap-button.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\bootstrap-carousel.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\bootstrap-collapse.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\bootstrap-dropdown.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\bootstrap-modal.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\bootstrap-popover.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\bootstrap-scrollspy.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\bootstrap-tab.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\bootstrap-tooltip.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\bootstrap-transition.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\bootstrap-typeahead.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\tests\index.html" />
+    <Content Include="bootstrap-master\bootstrap-master\js\tests\phantom.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\tests\server.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\tests\unit\bootstrap-affix.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\tests\unit\bootstrap-alert.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\tests\unit\bootstrap-button.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\tests\unit\bootstrap-carousel.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\tests\unit\bootstrap-collapse.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\tests\unit\bootstrap-dropdown.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\tests\unit\bootstrap-modal.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\tests\unit\bootstrap-phantom.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\tests\unit\bootstrap-popover.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\tests\unit\bootstrap-scrollspy.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\tests\unit\bootstrap-tab.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\tests\unit\bootstrap-tooltip.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\tests\unit\bootstrap-transition.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\tests\unit\bootstrap-typeahead.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\tests\vendor\jquery.js" />
+    <Content Include="bootstrap-master\bootstrap-master\js\tests\vendor\qunit.css" />
+    <Content Include="bootstrap-master\bootstrap-master\js\tests\vendor\qunit.js" />
+    <Content Include="bootstrap-master\bootstrap-master\less\tests\buttons.html" />
+    <Content Include="bootstrap-master\bootstrap-master\less\tests\css-tests.css" />
+    <Content Include="bootstrap-master\bootstrap-master\less\tests\css-tests.html" />
+    <Content Include="bootstrap-master\bootstrap-master\less\tests\forms-responsive.html" />
+    <Content Include="bootstrap-master\bootstrap-master\less\tests\forms.html" />
+    <Content Include="bootstrap-master\bootstrap-master\less\tests\navbar-fixed-top.html" />
+    <Content Include="bootstrap-master\bootstrap-master\less\tests\navbar-static-top.html" />
+    <Content Include="bootstrap-master\bootstrap-master\less\tests\navbar.html" />
+    <Content Include="bootstrap-master\docs\assets\css\bootstrap-responsive.css" />
+    <Content Include="bootstrap-master\docs\assets\css\bootstrap.css" />
+    <Content Include="bootstrap-master\docs\assets\css\docs.css" />
+    <Content Include="bootstrap-master\docs\assets\css\STG.css" />
+    <Content Include="bootstrap-master\docs\assets\ico\apple-touch-icon-114-precomposed.png" />
+    <Content Include="bootstrap-master\docs\assets\ico\apple-touch-icon-144-precomposed.png" />
+    <Content Include="bootstrap-master\docs\assets\ico\apple-touch-icon-57-precomposed.png" />
+    <Content Include="bootstrap-master\docs\assets\ico\apple-touch-icon-72-precomposed.png" />
+    <Content Include="bootstrap-master\docs\assets\ico\favicon.ico" />
+    <Content Include="bootstrap-master\docs\assets\ico\favicon.png" />
+    <Content Include="bootstrap-master\docs\assets\img\bootstrap-docs-readme.png" />
+    <Content Include="bootstrap-master\docs\assets\img\bootstrap-mdo-sfmoma-01.jpg" />
+    <Content Include="bootstrap-master\docs\assets\img\bootstrap-mdo-sfmoma-02.jpg" />
+    <Content Include="bootstrap-master\docs\assets\img\bootstrap-mdo-sfmoma-03.jpg" />
+    <Content Include="bootstrap-master\docs\assets\img\bs-docs-bootstrap-features.png" />
+    <Content Include="bootstrap-master\docs\assets\img\bs-docs-masthead-pattern.png" />
+    <Content Include="bootstrap-master\docs\assets\img\bs-docs-responsive-illustrations.png" />
+    <Content Include="bootstrap-master\docs\assets\img\bs-docs-twitter-github.png" />
+    <Content Include="bootstrap-master\docs\assets\img\example-sites\8020select.png" />
+    <Content Include="bootstrap-master\docs\assets\img\example-sites\adoptahydrant.png" />
+    <Content Include="bootstrap-master\docs\assets\img\example-sites\breakingnews.png" />
+    <Content Include="bootstrap-master\docs\assets\img\example-sites\fleetio.png" />
+    <Content Include="bootstrap-master\docs\assets\img\example-sites\gathercontent.png" />
+    <Content Include="bootstrap-master\docs\assets\img\example-sites\jshint.png" />
+    <Content Include="bootstrap-master\docs\assets\img\example-sites\kippt.png" />
+    <Content Include="bootstrap-master\docs\assets\img\example-sites\soundready.png" />
+    <Content Include="bootstrap-master\docs\assets\img\examples\bootstrap-example-carousel.png" />
+    <Content Include="bootstrap-master\docs\assets\img\examples\bootstrap-example-fluid.png" />
+    <Content Include="bootstrap-master\docs\assets\img\examples\bootstrap-example-justified-nav.png" />
+    <Content Include="bootstrap-master\docs\assets\img\examples\bootstrap-example-marketing-narrow.png" />
+    <Content Include="bootstrap-master\docs\assets\img\examples\bootstrap-example-marketing.png" />
+    <Content Include="bootstrap-master\docs\assets\img\examples\bootstrap-example-signin.png" />
+    <Content Include="bootstrap-master\docs\assets\img\examples\bootstrap-example-starter.png" />
+    <Content Include="bootstrap-master\docs\assets\img\examples\bootstrap-example-sticky-footer.png" />
+    <Content Include="bootstrap-master\docs\assets\img\examples\browser-icon-chrome.png" />
+    <Content Include="bootstrap-master\docs\assets\img\examples\browser-icon-firefox.png" />
+    <Content Include="bootstrap-master\docs\assets\img\examples\browser-icon-safari.png" />
+    <Content Include="bootstrap-master\docs\assets\img\examples\slide-01.jpg" />
+    <Content Include="bootstrap-master\docs\assets\img\examples\slide-02.jpg" />
+    <Content Include="bootstrap-master\docs\assets\img\examples\slide-03.jpg" />
+    <Content Include="bootstrap-master\docs\assets\img\glyphicons-halflings-white.png" />
+    <Content Include="bootstrap-master\docs\assets\img\glyphicons-halflings.png" />
+    <Content Include="bootstrap-master\docs\assets\img\grid-baseline-20px.png" />
+    <Content Include="bootstrap-master\docs\assets\img\less-logo-large.png" />
+    <Content Include="bootstrap-master\docs\assets\img\responsive-illustrations.png" />
+    <Content Include="bootstrap-master\docs\assets\js\application.js" />
+    <Content Include="bootstrap-master\docs\assets\js\bootstrap-affix.js" />
+    <Content Include="bootstrap-master\docs\assets\js\bootstrap-alert.js" />
+    <Content Include="bootstrap-master\docs\assets\js\bootstrap-button.js" />
+    <Content Include="bootstrap-master\docs\assets\js\bootstrap-carousel.js" />
+    <Content Include="bootstrap-master\docs\assets\js\bootstrap-collapse.js" />
+    <Content Include="bootstrap-master\docs\assets\js\bootstrap-dropdown.js" />
+    <Content Include="bootstrap-master\docs\assets\js\bootstrap-modal.js" />
+    <Content Include="bootstrap-master\docs\assets\js\bootstrap-popover.js" />
+    <Content Include="bootstrap-master\docs\assets\js\bootstrap-scrollspy.js" />
+    <Content Include="bootstrap-master\docs\assets\js\bootstrap-tab.js" />
+    <Content Include="bootstrap-master\docs\assets\js\bootstrap-tooltip.js" />
+    <Content Include="bootstrap-master\docs\assets\js\bootstrap-transition.js" />
+    <Content Include="bootstrap-master\docs\assets\js\bootstrap-typeahead.js" />
+    <Content Include="bootstrap-master\docs\assets\js\bootstrap.js" />
+    <Content Include="bootstrap-master\docs\assets\js\bootstrap.min.js" />
+    <Content Include="bootstrap-master\docs\assets\js\google-code-prettify\prettify.css" />
+    <Content Include="bootstrap-master\docs\assets\js\google-code-prettify\prettify.js" />
+    <Content Include="bootstrap-master\docs\assets\js\holder\holder.js" />
+    <Content Include="bootstrap-master\docs\assets\js\html5shiv.js" />
+    <Content Include="bootstrap-master\docs\assets\js\jquery.js" />
+    <Content Include="bootstrap-master\docs\base-css.html" />
+    <Content Include="bootstrap-master\docs\build\index.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\.gitmodules" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\lib\compiler.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\lib\hogan.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\lib\template.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\html\list.html" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\index.html" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\index.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\mustache.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\spec.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\tools\release.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\tools\web_templates.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\1.0.0\hogan.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\1.0.0\hogan.min.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.0\hogan.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.0\hogan.min.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.3\hogan.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.3\hogan.min.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.amd.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.common.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.min.amd.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.min.common.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.min.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.min.mustache.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.mustache.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.5\template-1.0.5.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\builds\1.0.5\template-1.0.5.min.js" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\favicon.ico" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\images\logo.png" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\images\noise.png" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\images\small-hogan-icon.png" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\images\stripes.png" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\stylesheets\layout.css" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\stylesheets\skeleton.css" />
+    <Content Include="bootstrap-master\docs\components.html" />
+    <Content Include="bootstrap-master\docs\customize.html" />
+    <Content Include="bootstrap-master\docs\examples\carousel.html" />
+    <Content Include="bootstrap-master\docs\examples\fluid.html" />
+    <Content Include="bootstrap-master\docs\examples\hero.html" />
+    <Content Include="bootstrap-master\docs\examples\justified-nav.html" />
+    <Content Include="bootstrap-master\docs\examples\marketing-narrow.html" />
+    <Content Include="bootstrap-master\docs\examples\signin.html" />
+    <Content Include="bootstrap-master\docs\examples\starter-template.html" />
+    <Content Include="bootstrap-master\docs\examples\sticky-footer-navbar.html" />
+    <Content Include="bootstrap-master\docs\examples\sticky-footer.html" />
+    <Content Include="bootstrap-master\docs\extend.html" />
+    <Content Include="bootstrap-master\docs\getting-started.html" />
+    <Content Include="bootstrap-master\docs\index.html" />
+    <Content Include="bootstrap-master\docs\javascript.html" />
+    <Content Include="bootstrap-master\docs\scaffolding.html" />
+    <Content Include="bootstrap-master\img\glyphicons-halflings-white.png" />
+    <Content Include="bootstrap-master\img\glyphicons-halflings.png" />
+    <Content Include="bootstrap-master\js\bootstrap-affix.js" />
+    <Content Include="bootstrap-master\js\bootstrap-alert.js" />
+    <Content Include="bootstrap-master\js\bootstrap-button.js" />
+    <Content Include="bootstrap-master\js\bootstrap-carousel.js" />
+    <Content Include="bootstrap-master\js\bootstrap-collapse.js" />
+    <Content Include="bootstrap-master\js\bootstrap-dropdown.js" />
+    <Content Include="bootstrap-master\js\bootstrap-modal.js" />
+    <Content Include="bootstrap-master\js\bootstrap-popover.js" />
+    <Content Include="bootstrap-master\js\bootstrap-scrollspy.js" />
+    <Content Include="bootstrap-master\js\bootstrap-tab.js" />
+    <Content Include="bootstrap-master\js\bootstrap-tooltip.js" />
+    <Content Include="bootstrap-master\js\bootstrap-transition.js" />
+    <Content Include="bootstrap-master\js\bootstrap-typeahead.js" />
+    <Content Include="bootstrap-master\js\tests\index.html" />
+    <Content Include="bootstrap-master\js\tests\phantom.js" />
+    <Content Include="bootstrap-master\js\tests\server.js" />
+    <Content Include="bootstrap-master\js\tests\unit\bootstrap-affix.js" />
+    <Content Include="bootstrap-master\js\tests\unit\bootstrap-alert.js" />
+    <Content Include="bootstrap-master\js\tests\unit\bootstrap-button.js" />
+    <Content Include="bootstrap-master\js\tests\unit\bootstrap-carousel.js" />
+    <Content Include="bootstrap-master\js\tests\unit\bootstrap-collapse.js" />
+    <Content Include="bootstrap-master\js\tests\unit\bootstrap-dropdown.js" />
+    <Content Include="bootstrap-master\js\tests\unit\bootstrap-modal.js" />
+    <Content Include="bootstrap-master\js\tests\unit\bootstrap-phantom.js" />
+    <Content Include="bootstrap-master\js\tests\unit\bootstrap-popover.js" />
+    <Content Include="bootstrap-master\js\tests\unit\bootstrap-scrollspy.js" />
+    <Content Include="bootstrap-master\js\tests\unit\bootstrap-tab.js" />
+    <Content Include="bootstrap-master\js\tests\unit\bootstrap-tooltip.js" />
+    <Content Include="bootstrap-master\js\tests\unit\bootstrap-transition.js" />
+    <Content Include="bootstrap-master\js\tests\unit\bootstrap-typeahead.js" />
+    <Content Include="bootstrap-master\js\tests\vendor\jquery.js" />
+    <Content Include="bootstrap-master\js\tests\vendor\qunit.css" />
+    <Content Include="bootstrap-master\js\tests\vendor\qunit.js" />
+    <Content Include="bootstrap-master\less\tests\buttons.html" />
+    <Content Include="bootstrap-master\less\tests\css-tests.css" />
+    <Content Include="bootstrap-master\less\tests\css-tests.html" />
+    <Content Include="bootstrap-master\less\tests\forms-responsive.html" />
+    <Content Include="bootstrap-master\less\tests\forms.html" />
+    <Content Include="bootstrap-master\less\tests\navbar-fixed-top.html" />
+    <Content Include="bootstrap-master\less\tests\navbar-static-top.html" />
+    <Content Include="bootstrap-master\less\tests\navbar.html" />
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="packages.config" />
+    <Content Include="bootstrap-master\.travis.yml" />
+    <Content Include="bootstrap-master\bootstrap-master\.travis.yml" />
+    <Content Include="bootstrap-master\bootstrap-master\CHANGELOG.md" />
+    <Content Include="bootstrap-master\bootstrap-master\component.json" />
+    <Content Include="bootstrap-master\bootstrap-master\composer.json" />
+    <Content Include="bootstrap-master\bootstrap-master\CONTRIBUTING.md" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\assets\js\README.md" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\.bin\hulk" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\.git_ignore" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\bin\hulk" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\LICENSE" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\Makefile" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\package.json" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\README.md" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\spec\Changes" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\spec\Rakefile" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\spec\README.md" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\comments.json" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\comments.yml" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\delimiters.json" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\delimiters.yml" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\interpolation.json" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\interpolation.yml" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\inverted.json" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\inverted.yml" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\partials.json" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\partials.yml" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\sections.json" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\sections.yml" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\~lambdas.json" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\~lambdas.yml" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\spec\TESTING.md" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\test\templates\list.mustache" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\web\index.html.mustache" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\wrappers\amd.js.mustache" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\wrappers\common.js.mustache" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\wrappers\js.mustache" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\node_modules\hogan.js\wrappers\mustache.js.mustache" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\build\package.json" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\templates\layout.mustache" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\templates\pages\base-css.mustache" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\templates\pages\components.mustache" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\templates\pages\customize.mustache" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\templates\pages\extend.mustache" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\templates\pages\getting-started.mustache" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\templates\pages\index.mustache" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\templates\pages\javascript.mustache" />
+    <Content Include="bootstrap-master\bootstrap-master\docs\templates\pages\scaffolding.mustache" />
+    <Content Include="bootstrap-master\bootstrap-master\js\.jshintrc" />
+    <Content Include="bootstrap-master\bootstrap-master\less\accordion.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\alerts.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\bootstrap.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\breadcrumbs.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\button-groups.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\buttons.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\carousel.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\close.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\code.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\component-animations.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\dropdowns.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\forms.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\grid.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\hero-unit.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\labels-badges.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\layouts.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\media.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\mixins.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\modals.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\navbar.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\navs.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\pager.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\pagination.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\popovers.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\progress-bars.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\reset.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\responsive-1200px-min.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\responsive-767px-max.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\responsive-768px-979px.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\responsive-navbar.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\responsive-utilities.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\responsive.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\scaffolding.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\sprites.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\tables.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\thumbnails.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\tooltip.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\type.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\utilities.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\variables.less" />
+    <Content Include="bootstrap-master\bootstrap-master\less\wells.less" />
+    <Content Include="bootstrap-master\bootstrap-master\LICENSE" />
+    <Content Include="bootstrap-master\bootstrap-master\Makefile" />
+    <Content Include="bootstrap-master\bootstrap-master\package.json" />
+    <Content Include="bootstrap-master\bootstrap-master\README.md" />
+    <Content Include="bootstrap-master\CHANGELOG.md" />
+    <Content Include="bootstrap-master\component.json" />
+    <Content Include="bootstrap-master\composer.json" />
+    <Content Include="bootstrap-master\CONTRIBUTING.md" />
+    <Content Include="bootstrap-master\docs\assets\js\README.md" />
+    <Content Include="bootstrap-master\docs\build\node_modules\.bin\hulk" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\.git_ignore" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\bin\hulk" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\LICENSE" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\Makefile" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\package.json" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\README.md" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\spec\Changes" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\spec\Rakefile" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\spec\README.md" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\comments.json" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\comments.yml" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\delimiters.json" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\delimiters.yml" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\interpolation.json" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\interpolation.yml" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\inverted.json" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\inverted.yml" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\partials.json" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\partials.yml" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\sections.json" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\sections.yml" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\~lambdas.json" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\spec\specs\~lambdas.yml" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\spec\TESTING.md" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\test\templates\list.mustache" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\web\index.html.mustache" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\wrappers\amd.js.mustache" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\wrappers\common.js.mustache" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\wrappers\js.mustache" />
+    <Content Include="bootstrap-master\docs\build\node_modules\hogan.js\wrappers\mustache.js.mustache" />
+    <Content Include="bootstrap-master\docs\build\package.json" />
+    <Content Include="bootstrap-master\docs\templates\layout.mustache" />
+    <Content Include="bootstrap-master\docs\templates\pages\base-css.mustache" />
+    <Content Include="bootstrap-master\docs\templates\pages\components.mustache" />
+    <Content Include="bootstrap-master\docs\templates\pages\customize.mustache" />
+    <Content Include="bootstrap-master\docs\templates\pages\extend.mustache" />
+    <Content Include="bootstrap-master\docs\templates\pages\getting-started.mustache" />
+    <Content Include="bootstrap-master\docs\templates\pages\index.mustache" />
+    <Content Include="bootstrap-master\docs\templates\pages\javascript.mustache" />
+    <Content Include="bootstrap-master\docs\templates\pages\scaffolding.mustache" />
+    <Content Include="bootstrap-master\js\.jshintrc" />
+    <Content Include="bootstrap-master\less\accordion.less" />
+    <Content Include="bootstrap-master\less\alerts.less" />
+    <Content Include="bootstrap-master\less\bootstrap.less" />
+    <Content Include="bootstrap-master\less\breadcrumbs.less" />
+    <Content Include="bootstrap-master\less\button-groups.less" />
+    <Content Include="bootstrap-master\less\buttons.less" />
+    <Content Include="bootstrap-master\less\carousel.less" />
+    <Content Include="bootstrap-master\less\close.less" />
+    <Content Include="bootstrap-master\less\code.less" />
+    <Content Include="bootstrap-master\less\component-animations.less" />
+    <Content Include="bootstrap-master\less\dropdowns.less" />
+    <Content Include="bootstrap-master\less\forms.less" />
+    <Content Include="bootstrap-master\less\grid.less" />
+    <Content Include="bootstrap-master\less\hero-unit.less" />
+    <Content Include="bootstrap-master\less\labels-badges.less" />
+    <Content Include="bootstrap-master\less\layouts.less" />
+    <Content Include="bootstrap-master\less\media.less" />
+    <Content Include="bootstrap-master\less\mixins.less" />
+    <Content Include="bootstrap-master\less\modals.less" />
+    <Content Include="bootstrap-master\less\navbar.less" />
+    <Content Include="bootstrap-master\less\navs.less" />
+    <Content Include="bootstrap-master\less\pager.less" />
+    <Content Include="bootstrap-master\less\pagination.less" />
+    <Content Include="bootstrap-master\less\popovers.less" />
+    <Content Include="bootstrap-master\less\progress-bars.less" />
+    <Content Include="bootstrap-master\less\reset.less" />
+    <Content Include="bootstrap-master\less\responsive-1200px-min.less" />
+    <Content Include="bootstrap-master\less\responsive-767px-max.less" />
+    <Content Include="bootstrap-master\less\responsive-768px-979px.less" />
+    <Content Include="bootstrap-master\less\responsive-navbar.less" />
+    <Content Include="bootstrap-master\less\responsive-utilities.less" />
+    <Content Include="bootstrap-master\less\responsive.less" />
+    <Content Include="bootstrap-master\less\scaffolding.less" />
+    <Content Include="bootstrap-master\less\sprites.less" />
+    <Content Include="bootstrap-master\less\tables.less" />
+    <Content Include="bootstrap-master\less\thumbnails.less" />
+    <Content Include="bootstrap-master\less\tooltip.less" />
+    <Content Include="bootstrap-master\less\type.less" />
+    <Content Include="bootstrap-master\less\utilities.less" />
+    <Content Include="bootstrap-master\less\variables.less" />
+    <Content Include="bootstrap-master\less\wells.less" />
+    <Content Include="bootstrap-master\LICENSE" />
+    <Content Include="bootstrap-master\Makefile" />
+    <Content Include="bootstrap-master\package.json" />
+    <Content Include="bootstrap-master\README.md" />
+    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="STGCoverage.aspx" />
+    <Content Include="STGDownloads.aspx" />
+    <Content Include="STGHelp.aspx" />
+    <Content Include="STGHome.aspx" />
+    <Content Include="STGProjects.aspx" />
+    <Content Include="STGServices.aspx" />
+    <Content Include="STGSignIn.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Scripts\jquery-1.9.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="STGCoverage.aspx.cs">
+      <DependentUpon>STGCoverage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STGCoverage.aspx.designer.cs">
+      <DependentUpon>STGCoverage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STGDownloads.aspx.cs">
+      <DependentUpon>STGDownloads.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STGDownloads.aspx.designer.cs">
+      <DependentUpon>STGDownloads.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STGHelp.aspx.cs">
+      <DependentUpon>STGHelp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STGHelp.aspx.designer.cs">
+      <DependentUpon>STGHelp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STGHome.aspx.cs">
+      <DependentUpon>STGHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STGHome.aspx.designer.cs">
+      <DependentUpon>STGHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STGProjects.aspx.cs">
+      <DependentUpon>STGProjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STGProjects.aspx.designer.cs">
+      <DependentUpon>STGProjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STGServices.aspx.cs">
+      <DependentUpon>STGServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STGServices.aspx.designer.cs">
+      <DependentUpon>STGServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STGSignIn.aspx.cs">
+      <DependentUpon>STGSignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STGSignIn.aspx.designer.cs">
+      <DependentUpon>STGSignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="STGSite.Master.cs">
+      <DependentUpon>STGSite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="STGSite.Master.designer.cs">
+      <DependentUpon>STGSite.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="StyleSheet\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="STGSite.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8279/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
