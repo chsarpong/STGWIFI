@@ -527,6 +527,8 @@
     <Content Include="Images\orderedList7.png" />
     <Content Include="Images\orderedList8.png" />
     <Content Include="Images\orderedList9.png" />
+    <Content Include="Images\RIDGE.png" />
+    <Content Include="Images\SWEDRU.png" />
     <Content Include="packages.config" />
     <Content Include="bootstrap-master\.travis.yml" />
     <Content Include="bootstrap-master\bootstrap-master\.travis.yml" />
