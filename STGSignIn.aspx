@@ -64,7 +64,7 @@
           <input value="remember-me" type="checkbox"/> Remember me
         </label>
         <br /><br />
-        <button class="btn btn-large btn-primary" type="submit">Sign in with STG WIFI</button>
+        <asp:Button ID="btSignISTG" runat="server" Text="Sign in with STG WIFI" CssClass="btn btn-large btn-primary" Width="210px" OnClick="btSignISTG_Click"></asp:Button>
         <br /><br />OR<br /><br />
         <asp:Button ID="Button1" runat="server" Text="Sign Up for STG WIFI" CssClass="btn btn-large btn-success btn-large input-medium search-query" Width="210px"></asp:Button>
         <br />    <br />    <br />    <br />

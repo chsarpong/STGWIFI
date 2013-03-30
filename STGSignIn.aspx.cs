@@ -13,5 +13,10 @@ namespace STGWifi
         {
 
         }
+
+        protected void btSignISTG_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("https://apps.facebook.com/deamshub/?fb_source=bookmark_apps&ref=bookmarks&count=0&fb_bmpos=4_0");
+        }
     }
 }

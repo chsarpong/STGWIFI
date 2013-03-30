@@ -4,6 +4,7 @@
     <link href="bootstrap-master/bootstrap-master/docs/assets/css/bootstrap.css" rel="stylesheet" />
     <link href="bootstrap-master/bootstrap-master/docs/assets/css/bootstrap.css" rel="stylesheet" />
     <link href="bootstrap-master/docs/assets/css/STG.css" rel="stylesheet" />
+    <link href="StyleSheet/STGAnimation.css" rel="stylesheet" />
     <style type="text/css">
         body
         {
@@ -138,9 +139,9 @@
         <!-- Example row of columns -->
         <div class="row-fluid">
             <div class="span4">
-                <h2><asp:Label ID="lbRidge" runat="server" Text="Ridge"></asp:Label></h2>
+                <h2><asp:Label ID="lbRidge" runat="server" Text="Ridge" CssClass="textanimate"></asp:Label></h2>
                  <br />
-                <div class="metrohome1">
+                <div class="metrohome1 divanimate">
                  <br /><br />
                 <h2>Speed(Mbit/sec):<asp:Label ID="Label3" runat="server" Text="70"></asp:Label></h2> <br />
                 <p>When you use this WIFI you agree to the terms of use and any additional terms</p>
@@ -163,9 +164,9 @@
             </div>
 
             <div class="span4">
-                <h2><asp:Label ID="lbCantonment" runat="server" Text="Cantonment"></asp:Label></h2>
+                <h2><asp:Label ID="lbCantonment" runat="server" Text="Cantonment" CssClass="textanimate"></asp:Label></h2>
                 <br />
-                <div class="metrohome1">
+                <div class="metrohome1 divanimate">
                  <br /><br />
                 <h2>Speed(Mbit/sec):<asp:Label ID="Label1" runat="server" Text="70"></asp:Label></h2> <br />
                 <p>When you use this WIFI you agree to the terms of use and any additional terms</p>
@@ -174,9 +175,9 @@
             </div>
 
             <div class="span4">
-                <h2><asp:Label ID="lbAsylumDown" runat="server" Text="Asylum Down"></asp:Label></h2>
+                <h2><asp:Label ID="lbAsylumDown" runat="server" Text="Asylum Down" CssClass="textanimate"></asp:Label></h2>
                  <br />
-                 <div class="metrohome1">
+                 <div class="metrohome1 divanimate">
                  <br /><br />
                 <h2>Speed(Mbit/sec):<asp:Label ID="Label2" runat="server" Text="70"></asp:Label></h2> <br />
                 <p>When you use this WIFI you agree to the terms of use and any additional terms</p>
