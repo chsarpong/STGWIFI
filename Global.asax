@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="STGWifi.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="STGWifi.STGHome" Language="C#" %>
