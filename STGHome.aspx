@@ -130,7 +130,7 @@
                 are stored in the app (Web, Mobile, Desktop), so that you can find them even without internet access.
                 Browse wherever you are and whenever you want at your convenience. Connection speed 100 times faster. 
             </p>
-            <asp:TextBox ID="TextBox1" runat="server" CssClass="" Height="30px" Width="300px"></asp:TextBox>
+            <asp:TextBox ID="TextBox1" runat="server" CssClass="" Height="30px" Width="300px" placeholder="Enter cities and towns"></asp:TextBox>
             <asp:Button ID="Button1" runat="server" Text="FIND WI-FI HOTSPOT" CssClass="btn btn-large btn-success btn-large input-medium search-query" Width="230px"></asp:Button>
             <%--        <p><a class="btn btn-primary btn-large">Learn more</a></p>--%>
         </div>
